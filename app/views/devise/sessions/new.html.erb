@@ -7,16 +7,16 @@
         session_path(resource_name), html: {class: "well"}) do |f| %>
 
       <fieldset>
-        <legend>Sign In</legend>
+        <legend>Воход</legend>
 
-    <%= f.input :email %>
-    <%= f.input :password %>
+    <%= f.input :email, placeholder: 'Email', label: "Почта" %>
+    <%= f.input :password, label: 'Пароль', placeholder: 'Password'  %>
 
   <% if devise_mapping.rememberable? -%>
-    <div><%= f.input :remember_me, as: :boolean %></div>
+    <div><%= f.input :remember_me, inline_label: 'Запомнить пароль', as: :boolean %></div>
   <% end -%>
 
-  <div><%= f.button :submit, "Sign in" %></div>
+  <div><%= f.button :submit, "Войти" %></div>
           </fieldset>
 
 <% end %>
