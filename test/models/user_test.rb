@@ -27,14 +27,14 @@ class UserTest < ActiveSupport::TestCase
         user = User.new
         user.profile_name = users(:vovan).profile_name
         assert !user.save
-        assert !user.errors[profile_name].empty?
+        assert !user.errors[:profile_name].empty?
     end
 
     test "a user should have a profile name without spaces" do
-        user = User.new(first_name: 'vovan', last_name: 'vovann', email: 'vovan4e@ua.fm')
+        user = User.new(first_name: 'vova', last_name: 'michalchenko', email: 'vovan4e@ua.fm')
         user.password = user.password_confirmation = 'dpassword'
 
-        user.profile_name = "vovan4eg"
+        user.profile_name = "vovan"
 
         assert !user.save
         assert !user.errors[:profile_name].empty?
